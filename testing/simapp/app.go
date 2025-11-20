@@ -2,13 +2,14 @@ package simapp
 
 import (
 	"encoding/json"
-	"github.com/cosmos/cosmos-sdk/x/accumulator"
-	accumulatorkeeper "github.com/cosmos/cosmos-sdk/x/accumulator/keeper"
-	accumulatortypes "github.com/cosmos/cosmos-sdk/x/accumulator/types"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/cosmos/cosmos-sdk/x/accumulator"
+	accumulatorkeeper "github.com/cosmos/cosmos-sdk/x/accumulator/keeper"
+	accumulatortypes "github.com/cosmos/cosmos-sdk/x/accumulator/types"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -339,6 +340,9 @@ func NewSimApp(
 		appCodec, keys[stakingtypes.StoreKey], app.AccountKeeper, app.BankKeeper, app.GetSubspace(stakingtypes.ModuleName),
 	)
 
+	app.AccumulatorKeeper = accumulatorkeeper.NewKeeper(
+		appCodec, keys[accumulatortypes.StoreKey], keys[accumulatortypes.MemStoreKey], app.AccountKeeper, app.BankKeeper)
+
 	app.NFTKeeper = nftkeeper.NewKeeper(
 		appCodec,
 		keys[nfttypes.StoreKey],
@@ -346,14 +350,12 @@ func NewSimApp(
 		app.GetSubspace(nfttypes.ModuleName),
 		app.BankKeeper,
 		app.StakingKeeper,
+		app.AccumulatorKeeper,
 	)
-
-	accumulatorKeeper := accumulatorkeeper.NewKeeper(
-		appCodec, keys[accumulatortypes.StoreKey], keys[accumulatortypes.MemStoreKey], app.AccountKeeper, app.BankKeeper)
 
 	app.MintKeeper = mintkeeper.NewKeeper(
 		appCodec, keys[minttypes.StoreKey], app.GetSubspace(minttypes.ModuleName), app.StakingKeeper,
-		app.AccountKeeper, app.BankKeeper, accumulatorKeeper, authtypes.FeeCollectorName,
+		app.AccountKeeper, app.BankKeeper, app.AccumulatorKeeper, authtypes.FeeCollectorName,
 	)
 
 	app.DistrKeeper = distrkeeper.NewKeeper(
