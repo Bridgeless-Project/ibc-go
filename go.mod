@@ -170,7 +170,7 @@ require (
 )
 
 replace (
-	github.com/cosmos/cosmos-sdk => github.com/Bridgeless-Project/cosmos-sdk v0.46.37
+	github.com/cosmos/cosmos-sdk => github.com/Bridgeless-Project/cosmos-sdk v0.46.38
 
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.28

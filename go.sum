@@ -197,8 +197,8 @@ github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4/go.mod h1:hN
 github.com/99designs/keyring v1.2.1 h1:tYLp1ULvO7i3fI5vE21ReQuj99QFSs7lGm0xWyJo87o=
 github.com/99designs/keyring v1.2.1/go.mod h1:fc+wB5KTk9wQ9sDx0kFXB3A0MaeGHM9AwRStKOQ5vOA=
 github.com/Azure/go-ansiterm v0.0.0-20210617225240-d185dfc1b5a1 h1:UQHMgLO+TxOElx5B5HZ4hJQsoJ/PvUvKRhJHDQXO8P8=
-github.com/Bridgeless-Project/cosmos-sdk v0.46.37 h1:57QcHERYDFyv/I0hQWIdAMIfTGVJYRW4uuAI8fzd3D4=
-github.com/Bridgeless-Project/cosmos-sdk v0.46.37/go.mod h1:q+2nU/7HbSEmpNtrldKkUsv0acEWvLrGSN3gJqA+XBU=
+github.com/Bridgeless-Project/cosmos-sdk v0.46.38 h1:iYEbWS9LZRUJ8HhVl1u7o+jlQlrkm2gaBllut5gYd9A=
+github.com/Bridgeless-Project/cosmos-sdk v0.46.38/go.mod h1:Fd+nusYZsDtQcl1nya1cXPlmH0PyTkit3YJDRdtmM1k=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/ChainSafe/go-schnorrkel v1.0.0 h1:3aDA67lAykLaG1y3AOjs88dMxC88PgUuHRrLeDnvGIM=
